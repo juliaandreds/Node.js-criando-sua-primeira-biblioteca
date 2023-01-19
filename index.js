@@ -18,19 +18,7 @@ async function pegaArquivo (caminhoArquivo) {
 
 
 
-
-//async/await
-/* function pegaArquivo (caminhoArquivo) {
-    const encoding = "UTF-8";
-    fs.promises
-    .readFile (caminhoArquivo,encoding)
-    .then ((texto) => console.log (chalk.green(texto)))
-    .catch (trataErro)
-*/
-
-
-
-
 pegaArquivo ("./arquivos/texto.md")
 pegaArquivo("./arquivos")
 
+//\[[^[\]]*?\]
