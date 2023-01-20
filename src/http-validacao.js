@@ -1,7 +1,23 @@
-function extraiLinks (arrLinks) {
+ function extraiLinks (arrLinks) {
    return arrLinks.map((objetoLink) => Object.values (objetoLink).join())
 }
 
-export default function listaValidada (listadeLinks) {
-    return extraiLinks (listadeLinks);
+async function checaStatus (listaURLs) {
+    const arrStatus = await Promise
+    .all (
+        listaURLs.map (async(url) => {
+        const response = await fetch(url)
+        return response.status
+        })  
+    )
+    return arrStatus; 
 }
+
+export default async function listaValidada (listadeLinks) {
+    const links =  extraiLinks (listadeLinks);
+    const status = await checaStatus (links)
+    return status
+}
+
+//[gatinho salsicha](http://gatinhosalsicha.com.br/)
+

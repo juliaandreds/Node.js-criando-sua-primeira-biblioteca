@@ -6,13 +6,13 @@ import listaValidada from "./http-validacao.js";
 
 const caminho = process.argv;
 
-function imprimeLista(valida, resultado, identificador = "") {
+async function imprimeLista(valida, resultado, identificador = "") {
 
   if(valida) {
     console.log()
     console.log(
       chalk.yellow("Lista validada"), 
-      chalk.black.bgGreen(identificador), listaValidada(resultado)
+      chalk.black.bgGreen(identificador), await listaValidada(resultado)
     );
   } else {
     console.log(
