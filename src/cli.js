@@ -45,8 +45,9 @@ async function processaTexto(argumentos) {
 
     arquivos.forEach(async (nomeDeArquivo) => {
       const lista = await pegaArquivo(`${caminho}/${nomeDeArquivo}`);
-
+      
       imprimeLista(valida, lista, nomeDeArquivo);
+      
     });
     
   }
